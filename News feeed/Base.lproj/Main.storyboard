@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Main Table View Controller-->
         <scene sceneID="uCv-nb-tTA">
             <objects>
-                <tableViewController id="OZX-wr-zwD" sceneMemberID="viewController">
+                <tableViewController id="OZX-wr-zwD" customClass="MainTableViewController" customModule="News_feeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pqH-eu-R2Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +75,22 @@
             </objects>
             <point key="canvasLocation" x="1239.1304347826087" y="116.51785714285714"/>
         </scene>
+        <!--Article View Controller-->
+        <scene sceneID="b8a-RC-cZ3">
+            <objects>
+                <viewController id="tTk-Oa-FJ3" customClass="ArticleViewController" customModule="News_feeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4wV-GK-4Mr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="F2U-ri-Xk8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Pn-Z9-G5s"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01V-Ip-irp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3188" y="117"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="BUV-gE-oEf">
             <objects>
@@ -91,6 +108,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRT-Gp-ehi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cip-XF-MMv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fmn-UW-0Nv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qP3-SP-h40">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tTk-Oa-FJ3" kind="relationship" relationship="rootViewController" id="7hg-aC-gNm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lbu-Ra-mDh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2534.7826086956525" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>
