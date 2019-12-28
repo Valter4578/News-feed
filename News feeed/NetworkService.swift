@@ -36,10 +36,16 @@ class NetworkService {
     }
     
     func parseJSONData(data: Data) -> [Article] {
+        var articles = [Article]()
+        
         let decoder = JSONDecoder()
         
         do {
-            
+            let articleDataStore = try? decoder.decode(ArticleDataStore.self, from: data)
+            articles = articleDataStore!.articles
+        } catch {
+            print(error)
         }
+        return articles
     }
 }

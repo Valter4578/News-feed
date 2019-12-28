@@ -8,11 +8,34 @@
 
 import Foundation
 
-struct Article {
+struct Article: Codable {
     
     var source: String = ""
-    var description: Sting = ""
-    var urlToImage: Sting = ""
+    var description: String = ""
+    var urlToImage: String = ""
     var content: String = ""
     
+    enum CodingKeys: String, CodingKey {
+        case source
+        case description
+        case urlToImage
+        case content
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        source = try values.decode(String.self, forKey: .source)
+        description = try values.decode(String.self, forKey: .description)
+        urlToImage = try values.decode(String.self, forKey: .urlToImage)
+        content = try values.decode(String.self, forKey: .content)
+        
+        
+    }
 }
+
+struct ArticleDataStore: Codable {
+    var articles: [Article]
+}
+
+
