@@ -10,9 +10,13 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
+    let apiUrl = "https://api.github.com/users/valter4578"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let networkService = NetworkService()
+        networkService.getLatestArticles(url: apiUrl, tableView: self.tableView)
     }
 
     // MARK: - Table view data source

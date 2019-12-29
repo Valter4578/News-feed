@@ -27,12 +27,14 @@ class NetworkService {
             
             // Parse JSON data
             if let data = data {
+                print(data)
                 self.articles = self.parseJSONData(data: data)
-                
                 tableView.reloadData()
             }
         }
         task.resume()
+        
+        
     }
     
     func parseJSONData(data: Data) -> [Article] {
@@ -41,8 +43,8 @@ class NetworkService {
         let decoder = JSONDecoder()
         
         do {
-            let articleDataStore = try? decoder.decode(ArticleDataStore.self, from: data)
-            articles = articleDataStore!.articles
+            let articleDataStore = try decoder.decode(ArticleDataStore.self, from: data)
+            articles = articleDataStore.articles
         } catch {
             print(error)
         }
