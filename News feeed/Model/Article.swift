@@ -10,11 +10,11 @@ import Foundation
 
 struct Article: Codable {
     var source: Source
-    var author: String
+    var author: String?
     var title: String
     var description: String
     var url: URL
-    var urlToImage: URL
+    var urlToImage: URL?
     var content: String
     
     enum codingKeys: String, CodingKey {
@@ -31,15 +31,8 @@ struct Article: Codable {
 struct Source: Codable {
     var name: String
     
-    enum CodingKeys: String, CodingKey {
-        case name
-    }
 }
 
 struct Articles: Codable {
-    var articles: Article
-    
-    enum CodingKeys: String, CodingKey {
-        case articles
-    }
+    var articles: [Article]
 }

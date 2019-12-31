@@ -17,7 +17,7 @@ class MainTableViewController: UITableViewController {
         
         let networkService = NetworkService()
         apiUrl = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-30&sortBy=publishedAt&apiKey=c15b2503eabf49ffb370b739e4c995f2")
-        networkService.parseJSON(from: apiUrl)
+        networkService.parseJSON(from: apiUrl!)
     }
 
     // MARK: - Table view data source

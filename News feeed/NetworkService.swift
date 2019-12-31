@@ -10,22 +10,21 @@ import UIKit
 
 class NetworkService {
     // MARK: - Variables
-    var articles = [Article]()
     
     // MARK: - Methods
     func parseJSON(from url: URL) {
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            print(error)
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 let decoder = JSONDecoder()
                 
-                let articleData = try decoder.decode(Article.self, from: data!)
-                print(articleData.description)
+                let articleData = try decoder.decode(Articles.self, from: data!)
+                print(articleData.articles.description)
             } catch {
                 print(error)
             }
         }
+        task.resume()
     }
 
 }
