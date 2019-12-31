@@ -10,13 +10,14 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    let apiUrl = "https://api.github.com/users/valter4578"
+    var apiUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let networkService = NetworkService()
-        networkService.getLatestArticles(url: apiUrl, tableView: self.tableView)
+        apiUrl = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&from=2019-11-30&sortBy=publishedAt&apiKey=c15b2503eabf49ffb370b739e4c995f2")
+        networkService.parseJSON(from: apiUrl)
     }
 
     // MARK: - Table view data source

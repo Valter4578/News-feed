@@ -9,30 +9,37 @@
 import Foundation
 
 struct Article: Codable {
+    var source: Source
+    var author: String
+    var title: String
+    var description: String
+    var url: URL
+    var urlToImage: URL
+    var content: String
     
-    var description: String = ""
-    var urlToImage: String? = ""
-    var content: String = ""
-    
-    enum CodingKeys: String, CodingKey {
+    enum codingKeys: String, CodingKey {
+        case source
+        case author
+        case title
         case description
+        case url
         case urlToImage
         case content
     }
+}
+
+struct Source: Codable {
+    var name: String
     
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        description = try values.decode(String.self, forKey: .description)
-        urlToImage = try values.decode(String.self, forKey: .urlToImage)
-        content = try values.decode(String.self, forKey: .content)
-        
-        
+    enum CodingKeys: String, CodingKey {
+        case name
     }
 }
 
-struct ArticleDataStore: Codable {
-
+struct Articles: Codable {
+    var articles: Article
+    
+    enum CodingKeys: String, CodingKey {
+        case articles
+    }
 }
-
-

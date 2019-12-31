@@ -13,41 +13,19 @@ class NetworkService {
     var articles = [Article]()
     
     // MARK: - Methods
-    /// Method that will be get latest articles in json from newsapi.org
-    /// - Parameter url: api url
-    func getLatestArticles(url: String, tableView: UITableView) {
-        guard let articleUrl = URL(string: url) else { return }
+    func parseJSON(from url: URL) {
         
-        let request = URLRequest(url: articleUrl)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            // Parse JSON data
-            if let data = data {
-                print(data)
-                self.articles = self.parseJSONData(data: data)
-                tableView.reloadData()
-            }
-        }
-        task.resume()
-        
-        
-    }
-    
-    func parseJSONData(data: Data) -> [Article] {
-        var articles = [Article]()
-        
-        let decoder = JSONDecoder()
-        
-        do {
-            let articleDataStore = try decoder.decode(ArticleDataStore.self, from: data)
-            articles = articleDataStore.articles
-        } catch {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             print(error)
+            do {
+                let decoder = JSONDecoder()
+                
+                let articleData = try decoder.decode(Article.self, from: data!)
+                print(articleData.description)
+            } catch {
+                print(error)
+            }
         }
-        return articles
     }
+
 }
