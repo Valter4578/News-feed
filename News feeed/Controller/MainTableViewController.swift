@@ -30,20 +30,21 @@ class MainTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
-    }
-
+ 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return articles?.articles.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(#function)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "main cell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         
-        cell.articleDescription.text = articles?.articles?[indexPath.row].description
+        cell.articleDescription.text = articles?.articles[indexPath.row].description
+        cell.title.text = articles?.articles[indexPath.row].title
+        cell.source.text = articles?.articles[indexPath.row].source.name
+        
         return cell
+        
     }
 
 
@@ -53,6 +54,10 @@ extension MainTableViewController: NetworkServiceDelegate {
 
     func transferArticleData(data: Articles) {
         articles = data
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+
+        }
     }
     
     

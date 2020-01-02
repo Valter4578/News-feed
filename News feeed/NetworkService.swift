@@ -24,7 +24,7 @@ class NetworkService {
                 
                 let articleData = try decoder.decode(Articles.self, from: data!)
                 self.delegate?.transferArticleData(data: articleData)
-                print(articleData.articles?.description)
+                print(articleData.articles.description)
             } catch {
                 print(error)
             }
