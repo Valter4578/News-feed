@@ -34,5 +34,5 @@ struct Source: Codable {
 }
 
 struct Articles: Codable {
-    var articles: [Article]
+    var articles: [Article]?
 }

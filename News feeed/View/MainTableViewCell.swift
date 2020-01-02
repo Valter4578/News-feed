@@ -10,6 +10,13 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var source: UILabel!
+    @IBOutlet weak var articleDescription: UILabel!
+    
+    // MARK: - Lyfecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol NetworkServiceDelegate: class {
+    func transferArticleData(data: Articles)
+}
+
 class NetworkService {
-    // MARK: - Variables
-    
+    // MARK: - Public properties
+    var delegate: NetworkServiceDelegate?
     // MARK: - Methods
     func parseJSON(from url: URL) {
         
@@ -19,7 +23,8 @@ class NetworkService {
                 let decoder = JSONDecoder()
                 
                 let articleData = try decoder.decode(Articles.self, from: data!)
-                print(articleData.articles.description)
+                self.delegate?.transferArticleData(data: articleData)
+                print(articleData.articles?.description)
             } catch {
                 print(error)
             }
@@ -27,4 +32,5 @@ class NetworkService {
         task.resume()
     }
 
+    
 }
