@@ -11,12 +11,16 @@ import UIKit
 class MainTableViewController: UITableViewController {
     // MARK: - Dependencies
     var networkService: NetworkService?
+    // MARK: - Outlets
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     // MARK: - Public properties
     var articles: Articles?
+    var articlesTopics: ArticlesTopics?
     // MARK: - Constants
     
     // MARK: - Private properties
     private var apiUrl: URL?
+    private var currentTopicUrl: String? 
     // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,7 @@ class MainTableViewController: UITableViewController {
         
         networkService?.delegate = self
     }
+    
 
     // MARK: - Table view data source
  
@@ -39,7 +44,6 @@ class MainTableViewController: UITableViewController {
         print(#function)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "main cell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         
-        cell.articleDescription.text = articles?.articles[indexPath.row].description
         cell.title.text = articles?.articles[indexPath.row].title
         cell.source.text = articles?.articles[indexPath.row].source.name
         

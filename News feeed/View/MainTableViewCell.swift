@@ -14,7 +14,7 @@ class MainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var source: UILabel!
-    @IBOutlet weak var articleDescription: UILabel!
+    @IBOutlet weak var articleImageView: UIImageView!
     
     // MARK: - Lyfecycle
     override func awakeFromNib() {
