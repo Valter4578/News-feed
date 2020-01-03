@@ -15,7 +15,7 @@ class MainTableViewController: UITableViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     // MARK: - Public properties
     var articles: Articles?
-    var articlesTopics: ArticlesTopics?
+    var articlesTopics: ArticlesTopics? = ArticlesTopics()
     // MARK: - Constants
     
     // MARK: - Private properties
@@ -24,17 +24,41 @@ class MainTableViewController: UITableViewController {
     // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentTopicUrl = articlesTopics?.urlsString[0]
         
+        segmentControlSetup()
+        networkServiceSetup()
         
+    }
+    // MARK: - Setups
+    private func networkServiceSetup() {
         networkService = NetworkService()
-        apiUrl = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&from=2019-12-02&sortBy=publishedAt&apiKey=c15b2503eabf49ffb370b739e4c995f2")
+        apiUrl = URL(string: currentTopicUrl!)
         networkService?.parseJSON(from: apiUrl!)
         
         networkService?.delegate = self
     }
     
-
-    // MARK: - Table view data source
+    private func segmentControlSetup() {
+        segmentControl.addTarget(self, action: #selector(selectedValue(for:)), for: .valueChanged)
+    }
+    
+    // MARK: - Public methods
+    @objc func selectedValue(for control: UISegmentedControl) {
+        if control == self.segmentControl {
+            let segmentIndex = control.selectedSegmentIndex
+            
+            if let topicUrl = self.articlesTopics?.topics[segmentIndex] {
+                self.currentTopicUrl = topicUrl
+                networkServiceSetup()
+            }
+            
+        }
+    }
+    // MARK: - Private methods
+    
+    
+    // MARK: - Table view data source implemention
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles?.articles.count ?? 0
@@ -50,10 +74,11 @@ class MainTableViewController: UITableViewController {
         return cell
         
     }
-
+    
+    
 
 }
-
+// MARK: - Network service delegate
 extension MainTableViewController: NetworkServiceDelegate {
 
     func transferArticleData(data: Articles) {

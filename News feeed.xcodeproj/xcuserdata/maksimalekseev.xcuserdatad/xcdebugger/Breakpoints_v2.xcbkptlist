@@ -30,10 +30,10 @@
             filePath = "News feeed/Controller/MainTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "MainTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,10 +110,10 @@
             filePath = "News feeed/Controller/MainTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "MainTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,10 +126,10 @@
             filePath = "News feeed/Controller/MainTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "MainTableViewController"
-            landmarkType = "3">
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "transferArticleData(data:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,10 +158,325 @@
             filePath = "News feeed/Controller/MainTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "MainTableViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3B50D0D-8771-466E-83A5-ACABB7308330"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "segmentControlSetup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C61E5027-C5DA-4F6E-9DD0-DE2C53BF4DC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "MainTableViewController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "527CAA25-10C7-4930-A263-7BBCD14699B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "selectedValue(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54FDFB34-4C7F-4F5A-8DFE-D09DFDA7F096"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "networkServiceSetup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "331AF972-2B08-4E9E-BA0E-3B8302C75363"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "networkServiceSetup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "MainTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - 4fe8c9674d961dd4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.articlesTopics.getter : Swift.Optional&lt;News_feeed.ArticlesTopics&gt;"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - b80e19b9c07e6e8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.articlesTopics.setter : Swift.Optional&lt;News_feeed.ArticlesTopics&gt;"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "153">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - d7710c4a034da0eb"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.articlesTopics.modify : Swift.Optional&lt;News_feeed.ArticlesTopics&gt;"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - 98f92519a386e45a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.articlesTopics.modify : Swift.Optional&lt;News_feeed.ArticlesTopics&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - 980bf167342ccf15"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.init(style: __C.UITableViewStyle) -&gt; News_feeed.MainTableViewController"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - 19fbf3513c79acaf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; News_feeed.MainTableViewController"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "466">
+               </Location>
+               <Location
+                  uuid = "4651C658-E4CB-432B-8C05-3AEFC3A777E6 - 64df421f5280dc1f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.MainTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;News_feeed.MainTableViewController&gt;"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/Controller/MainTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "422">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "377FBEDE-105F-4833-BD87-5A46DDCAD57D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "parseJSON(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2247F14C-A33A-4000-AAF1-4F4339DFD30A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "MainTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F75E388-7BD0-4412-8AE7-2ED11228C088"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "parseJSON(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3F75E388-7BD0-4412-8AE7-2ED11228C088 - ba5804c198d85344"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "News_feeed.NetworkService.parseJSON(from: Foundation.URL) -&gt; ()"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "90">
+               </Location>
+               <Location
+                  uuid = "3F75E388-7BD0-4412-8AE7-2ED11228C088 - 302444c3a15cd1b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in News_feeed.NetworkService.parseJSON(from: Foundation.URL) -&gt; ()"
+                  moduleName = "News feeed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimalekseev/Documents/Programming/Swift/Applications/News%20feeed/News%20feeed/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "206">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23C3FFCC-4677-4F6B-A63C-009333174A5D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "networkServiceSetup()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "480F0468-BD8B-4BB9-87F3-496491539EE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News feeed/Controller/MainTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "networkServiceSetup()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
