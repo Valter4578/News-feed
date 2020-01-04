@@ -24,6 +24,8 @@ class MainTableViewController: UITableViewController {
     // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         
         currentTopicUrl = articlesTopics?.urlsString[0]
         
         segmentControlSetup()

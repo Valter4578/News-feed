@@ -21,7 +21,8 @@ class NetworkService {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             do {
                 let decoder = JSONDecoder()
-                
+                print(url)
+                print(String(data:data!,encoding:.utf8))
                 let articleData = try decoder.decode(Articles.self, from: data!)
                 self.delegate?.transferArticleData(data: articleData)
                 print(articleData.articles.description)
