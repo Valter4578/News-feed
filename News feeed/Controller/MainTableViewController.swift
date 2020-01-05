@@ -19,8 +19,7 @@ class MainTableViewController: UITableViewController {
     // MARK: - Constants
     
     // MARK: - Private properties
-    private var apiUrl: URL?
-    private var currentTopicUrl: String? 
+    private var currentTopicUrl: String?
     // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +33,16 @@ class MainTableViewController: UITableViewController {
     }
     // MARK: - Setups
     private func networkServiceSetup() {
-        networkService = NetworkService()
-        apiUrl = URL(string: currentTopicUrl!)
-        networkService?.parseJSON(from: apiUrl!)
         
-        networkService?.delegate = self
+        guard let apiUrl = URL(string: currentTopicUrl!) else { return }
+        NetworkService.parseJSON(from: apiUrl) { (data) in
+            self.articles = data
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+
+            }
+
+        }
     }
     
     private func segmentControlSetup() {

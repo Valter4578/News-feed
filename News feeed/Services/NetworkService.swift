@@ -16,7 +16,7 @@ class NetworkService {
     // MARK: - Public properties
     var delegate: NetworkServiceDelegate?
     // MARK: - Methods
-    func parseJSON(from url: URL) {
+    class func parseJSON(from url: URL, complition: @escaping (Articles) -> ()) {
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -31,7 +31,7 @@ class NetworkService {
                     return
                 }
                 
-                self.delegate?.transferArticleData(data: articleData)
+                complition(articleData)
                 
                 for article in articles {
                     print(article.description)

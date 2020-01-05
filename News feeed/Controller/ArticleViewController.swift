@@ -50,6 +50,10 @@ class ArticleViewController: UIViewController {
     
 }
 
-extension ArticleViewController: NetServiceDelegate {
+extension ArticleViewController: NetworkServiceDelegate {
+    func transferArticleData(data: Articles) {
+        print("dfas")
+    }
+    
     
 }
