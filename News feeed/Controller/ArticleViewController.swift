@@ -9,8 +9,17 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
-    
+    // MARK: - Outlets
 
+    
+    // MARK: - Public properties
+    
+    // MARK: - Constants
+    
+    // MARK: - Private properties
+    
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,14 +27,11 @@ class ArticleViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // MARK: - Configure
+    
+    // MARK: - Public methods
+    
+    // MARK: - Private methods
+    
+    // MARK: - Actions
 }

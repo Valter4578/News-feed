@@ -77,8 +77,10 @@ class MainTableViewController: UITableViewController {
         
     }
     
-    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let articleVc = storyboard?.instantiateViewController(identifier: "articleVC") else { return }
+        present(articleVc, animated: true)
+    }
 }
 // MARK: - Network service delegate
 extension MainTableViewController: NetworkServiceDelegate {
