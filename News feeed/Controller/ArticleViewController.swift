@@ -9,6 +9,8 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
+    // MARK: - Dependencies
+    let networkService = NetworkService()
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -25,6 +27,8 @@ class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        networkService.delegate = self
+        
         setupUI()
     }
 
@@ -43,5 +47,9 @@ class ArticleViewController: UIViewController {
     @IBAction func cancelButtonClicked(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
     }
+    
+}
+
+extension ArticleViewController: NetServiceDelegate {
     
 }

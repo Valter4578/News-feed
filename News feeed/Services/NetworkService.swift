@@ -45,17 +45,21 @@ class NetworkService {
     
     func getImage(from url: URL) {
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
-            guard error == nil, let response = response as HTTPURLResponse else {
-                print(error)
-                return
-            }
-            
-            if let imageData = data {
-                let image = UImage(data: imageData)
+            if let e = error {
+                print("Error downloading cat picture: \(e)")
             } else {
-                print("Image is nil")
+                if let res = response as? HTTPURLResponse {
+                    print("Downloaded cat picture with response code \(res.statusCode)")
+                    
+                    if let imageData = data {
+                        let image = UIImage(data: imageData)
+                    } else {
+                        print("Couldn't get image: Image is nil")
+                    }
+                } else {
+                    print("Couldn't get response code for some reason")
+                }
             }
-            
         }
         task.resume()
     }
