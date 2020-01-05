@@ -42,4 +42,21 @@ class NetworkService {
         }
         task.resume()
     }
+    
+    func getImage(from url: URL) {
+        let task = URLSession.shared.dataTask(with: url) {data, response, error in
+            guard error == nil, let response = response as HTTPURLResponse else {
+                print(error)
+                return
+            }
+            
+            if let imageData = data {
+                let image = UImage(data: imageData)
+            } else {
+                print("Image is nil")
+            }
+            
+        }
+        task.resume()
+    }
 }
