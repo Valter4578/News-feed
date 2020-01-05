@@ -17,21 +17,29 @@ class NetworkService {
     var delegate: NetworkServiceDelegate?
     // MARK: - Methods
     func parseJSON(from url: URL) {
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                print(error ?? "Unknown error")
+                return
+            }
+
             do {
-                let decoder = JSONDecoder()
-                print(url)
-                print(String(data:data!,encoding:.utf8))
-                let articleData = try decoder.decode(Articles.self, from: data!)
+                let articleData = try JSONDecoder().decode(Articles.self, from: data)
+                guard let articles = articleData.articles else {
+                    print("No articles", articleData.status, articleData.message ?? "No message")
+                    return
+                }
+                
                 self.delegate?.transferArticleData(data: articleData)
-                print(articleData.articles.description)
+                
+                for article in articles {
+                    print(article.description)
+                }
             } catch {
                 print(error)
             }
         }
         task.resume()
     }
-
-    
 }

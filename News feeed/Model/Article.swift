@@ -15,7 +15,8 @@ struct Article: Codable {
     var description: String
     var url: URL
     var urlToImage: URL?
-    var content: String
+    //var content: String
+    
     
     enum codingKeys: String, CodingKey {
         case source
@@ -34,5 +35,8 @@ struct Source: Codable {
 }
 
 struct Articles: Codable {
-    var articles: [Article]
+    var articles: [Article]?
+    let status: String
+    let message: String?
+    let code: String?
 }

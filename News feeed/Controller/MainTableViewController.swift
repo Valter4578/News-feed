@@ -63,15 +63,15 @@ class MainTableViewController: UITableViewController {
     // MARK: - Table view data source implemention
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles?.articles.count ?? 0
+        return articles?.articles?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(#function)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "main cell", for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
         
-        cell.title.text = articles?.articles[indexPath.row].title
-        cell.source.text = articles?.articles[indexPath.row].source.name
+        cell.title.text = articles?.articles?[indexPath.row].title
+        cell.source.text = articles?.articles?[indexPath.row].source.name
         
         return cell
         
