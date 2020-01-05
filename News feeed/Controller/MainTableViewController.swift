@@ -78,8 +78,13 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let articleVc = storyboard?.instantiateViewController(identifier: "articleVC") else { return }
-        present(articleVc, animated: true)
+        guard let articleViewController = storyboard?.instantiateViewController(identifier: "articleVC") as? ArticleViewController else { return }
+//        guard let articleNavigationController = storyboard?.instantiateViewController(identifier: "articleNC") else { return }
+        // Send selected article to ArticleVC
+        articleViewController.articles = articles
+        articleViewController.selectedIndex = indexPath.row
+        // Present articleVC
+        navigationController?.pushViewController(articleViewController, animated: true)
     }
 }
 // MARK: - Network service delegate

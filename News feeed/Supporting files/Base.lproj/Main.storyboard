@@ -90,14 +90,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-Vf-kG9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="230"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ub8-Vf-kG9">
+                                <rect key="frame" x="0.0" y="202" width="414" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="CN1-4f-JPs"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-Ar-Zh7">
-                                <rect key="frame" x="0.0" y="318" width="414" height="176"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqf-Ar-Zh7">
+                                <rect key="frame" x="0.0" y="432" width="414" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="176" id="cBp-Lh-5Sg"/>
                                 </constraints>
@@ -110,9 +110,16 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXr-NF-vLE">
-                                <rect key="frame" x="0.0" y="494" width="414" height="379"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXr-NF-vLE">
+                                <rect key="frame" x="0.0" y="700" width="414" height="162"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCc-ls-NX3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -135,7 +142,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F2U-ri-Xk8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Pn-Z9-G5s"/>
+                    <navigationItem key="navigationItem" id="1Pn-Z9-G5s">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6wi-ga-JqE">
+                            <connections>
+                                <action selector="cancelButtonClicked:" destination="tTk-Oa-FJ3" id="IaD-hH-nSr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentLabel" destination="wXr-NF-vLE" id="1MM-N7-FB3"/>
+                        <outlet property="descriptionLabel" destination="fqf-Ar-Zh7" id="gBz-cM-SJE"/>
+                        <outlet property="imageView" destination="Ub8-Vf-kG9" id="JkN-Hj-PAP"/>
+                        <outlet property="titleLabel" destination="NCc-ls-NX3" id="zII-FF-c1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01V-Ip-irp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +181,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cip-XF-MMv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fmn-UW-0Nv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="articleNC" automaticallyAdjustsScrollViewInsets="NO" id="fmn-UW-0Nv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qP3-SP-h40">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
