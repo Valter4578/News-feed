@@ -50,7 +50,7 @@ class MainTableViewController: UITableViewController {
         if control == self.segmentControl {
             let segmentIndex = control.selectedSegmentIndex
             
-            if let topicUrl = self.articlesTopics?.topics[segmentIndex] {
+            if let topicUrl = self.articlesTopics?.urlsString[segmentIndex] {
                 self.currentTopicUrl = topicUrl
                 networkServiceSetup()
             }
