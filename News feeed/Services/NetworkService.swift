@@ -38,6 +38,7 @@ class NetworkService {
                 }
             } catch {
                 print(error)
+                print(String(data: data, encoding: .utf8))
             }
         }
         task.resume()
