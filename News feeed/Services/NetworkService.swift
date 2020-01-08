@@ -9,14 +9,14 @@
 import UIKit
 
 protocol NetworkServiceDelegate: class {
-    func transferArticleData(data: Articles)
+    func transferArticleData(data: NewsArticles)
 }
 
 class NetworkService {
     // MARK: - Public properties
     var delegate: NetworkServiceDelegate?
     // MARK: - Methods
-    class func parseJSON(from url: URL, complition: @escaping (Articles) -> ()) {
+    class func parseJSON(from url: URL, complition: @escaping (NewsArticles) -> ()) {
 
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
@@ -25,7 +25,7 @@ class NetworkService {
             }
 
             do {
-                let articleData = try JSONDecoder().decode(Articles.self, from: data)
+                let articleData = try JSONDecoder().decode(NewsArticles.self, from: data)
                 guard let articles = articleData.articles else {
                     print("No articles", articleData.status, articleData.message ?? "No message")
                     return

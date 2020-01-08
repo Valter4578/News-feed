@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Article: Codable {
+struct NewsArticle: Codable {
     var source: Source
     var author: String?
     var title: String
@@ -34,8 +34,8 @@ struct Source: Codable {
     
 }
 
-struct Articles: Codable {
-    var articles: [Article]?
+struct NewsArticles: Codable {
+    var articles: [NewsArticle]?
     let status: String
     let message: String?
     let code: String?
