@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
+@objc
 class MainTableViewController: UITableViewController {
     // MARK: - Dependencies
     var networkService: NetworkService?
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     // MARK: - Outlets
     @IBOutlet weak var segmentControl: UISegmentedControl!
     // MARK: - Public properties
-    var articles: Articles?
+    var articles: NewsArticles?
     var articlesTopics: ArticlesTopics? = ArticlesTopics()
     // MARK: - Constants
     
@@ -29,6 +33,7 @@ class MainTableViewController: UITableViewController {
         
         segmentControlSetup()
         networkServiceSetup()
+        createNewArticle()
         
     }
     // MARK: - Setups
@@ -62,8 +67,28 @@ class MainTableViewController: UITableViewController {
         }
     }
     // MARK: - Private methods
+    private func createNewArticle() {
+        let context = self.appDelegate.persistentContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: "Article", in: context) else { return }
+        
+        let newArticle = NSManagedObject(entity: entity, insertInto: context)
+        newArticle.setValue(articles?.articles?[0].description, forKey: "articleDescription")
+        newArticle.setValue(articles?.articles?[0].author, forKey: "author")
+        newArticle.setValue(articles?.articles?[0].content, forKey: "content")
+        newArticle.setValue(articles?.articles?[0].source.name, forKey: "source")
+        newArticle.setValue(articles?.articles?[0].title, forKey: "title")
+        
+        saveTheData(for: context)
+    }
     
     
+    private func saveTheData(for context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     // MARK: - Table view data source implemention
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +119,7 @@ class MainTableViewController: UITableViewController {
 // MARK: - Network service delegate
 extension MainTableViewController: NetworkServiceDelegate {
 
-    func transferArticleData(data: Articles) {
+    func transferArticleData(data: NewsArticles) {
         articles = data
         DispatchQueue.main.async {
             self.tableView.reloadData()

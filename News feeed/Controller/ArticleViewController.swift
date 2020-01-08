@@ -17,7 +17,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     // MARK: - Public properties
-    var articles: Articles?
+    var articles: NewsArticles?
     var selectedIndex: Int = 0 
     // MARK: - Constants
     
@@ -51,7 +51,7 @@ class ArticleViewController: UIViewController {
 }
 
 extension ArticleViewController: NetworkServiceDelegate {
-    func transferArticleData(data: Articles) {
+    func transferArticleData(data: NewsArticles) {
         print("dfas")
     }
     
