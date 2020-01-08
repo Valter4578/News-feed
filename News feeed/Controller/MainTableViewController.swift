@@ -33,7 +33,6 @@ class MainTableViewController: UITableViewController {
         
         segmentControlSetup()
         networkServiceSetup()
-        createNewArticle()
         
     }
     // MARK: - Setups
@@ -46,7 +45,7 @@ class MainTableViewController: UITableViewController {
                 self.tableView.reloadData()
 
             }
-
+            self.createNewArticle()
         }
     }
     
@@ -71,7 +70,7 @@ class MainTableViewController: UITableViewController {
         let context = self.appDelegate.persistentContainer.viewContext
         guard let entity = NSEntityDescription.entity(forEntityName: "Article", in: context) else { return }
         
-        let newArticle = NSManagedObject(entity: entity, insertInto: context)
+        let newArticle = NSManagedObject(entity: entity, insertInto: context) as! Article 
         newArticle.setValue(articles?.articles?[0].description, forKey: "articleDescription")
         newArticle.setValue(articles?.articles?[0].author, forKey: "author")
         newArticle.setValue(articles?.articles?[0].content, forKey: "content")
