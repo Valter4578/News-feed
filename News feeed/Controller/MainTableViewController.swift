@@ -24,15 +24,18 @@ class MainTableViewController: UITableViewController {
     
     // MARK: - Private properties
     private var currentTopicUrl: String?
+    private var isThereDataInContext: Bool?
     // MARK: - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         
         currentTopicUrl = articlesTopics?.urlsString[0]
         
         segmentControlSetup()
-        networkServiceSetup()
+        if !(isThereDataInContext ?? false) {
+            networkServiceSetup()
+            
+        }
         
     }
     // MARK: - Setups
@@ -45,7 +48,7 @@ class MainTableViewController: UITableViewController {
                 self.tableView.reloadData()
 
             }
-            self.createNewArticle()
+            self.createNewAticle()
         }
     }
     
@@ -65,29 +68,7 @@ class MainTableViewController: UITableViewController {
             
         }
     }
-    // MARK: - Private methods
-    private func createNewArticle() {
-        let context = self.appDelegate.persistentContainer.viewContext
-        guard let entity = NSEntityDescription.entity(forEntityName: "Article", in: context) else { return }
-        
-        let newArticle = NSManagedObject(entity: entity, insertInto: context) as! Article 
-        newArticle.setValue(articles?.articles?[0].description, forKey: "articleDescription")
-        newArticle.setValue(articles?.articles?[0].author, forKey: "author")
-        newArticle.setValue(articles?.articles?[0].content, forKey: "content")
-        newArticle.setValue(articles?.articles?[0].source.name, forKey: "source")
-        newArticle.setValue(articles?.articles?[0].title, forKey: "title")
-        
-        saveTheData(for: context)
-    }
-    
-    
-    private func saveTheData(for context: NSManagedObjectContext) {
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+
     // MARK: - Table view data source implemention
  
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,6 +106,4 @@ extension MainTableViewController: NetworkServiceDelegate {
 
         }
     }
-    
-    
 }
